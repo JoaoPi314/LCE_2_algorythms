@@ -22,36 +22,36 @@ teta = [0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0];
 Z = [0, 0, 0, 0; 0, 0, 0, 0; 0, 0, 0, 0]; 
 
 
-%C·lculo de S e de abs(s)
+%C√°lculo de S e de abs(s)
 for i = 1:4
   for j = 1:3
       S_complex(j, i) = V_array(i)*conj(I_array(j));
       S (j, i) = abs(S_complex(j, i));
   endfor
 endfor
-%N„o sei se È bem assim que calcula P e Q
-%C·lculo de P
+
+%C√°lculo de P
 for i = 1:4
   for j = 1:3
-      P(j, i) = imag(S_complex(j, i));
+      P(j, i) = real(S_complex(j, i));
   endfor
 endfor
 
-%C·lculo de Q
+%C√°lculo de Q
 for i = 1:4
   for j = 1:3
-      Q(j, i) = real(S_complex(j, i));
+      Q(j, i) = imag(S_complex(j, i));
   endfor
 endfor
 
-%C·lculo de fp
+%C√°lculo de fp
 for i = 1:4
   for j = 1:3
       fp(j, i) = P(j,i)/(abs(V_array(i)*I_array(j)));
   endfor
 endfor
 
-%C·lculo de Teta
+%C√°lculo de Teta
 for i = 1:4
   for j = 1:3
     teta(j, i) = rad2deg(acos(fp(j,i)));
@@ -59,7 +59,7 @@ for i = 1:4
 endfor
 
 
-%c·lculo de Z
+%c√°lculo de Z
 for i = 1:4
   for j = 1:3
       Z(j, i) = V_array(i)/I_array(j);
