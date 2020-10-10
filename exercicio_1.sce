@@ -32,7 +32,7 @@ Veq = V1 + V2 + V3;
 //Minima tensão
 Vsum = V1 + V3;
 fi_new = atan(imag(Vsum), real(Vsum));
-V2_new = A2/sqrt(2)*exp(%i*(-fi_new)); //Obtenção do ângulo oposto ao fi_new
+V2_new = A2/sqrt(2)*exp(%i*(fi_new+%pi)); //Obtenção do ângulo oposto ao fi_new
 
 Veq_new = V1 + V2_new + V3;
 
